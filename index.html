@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator | SAF Records Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="images/cgpa-to-marks-calculator.webp" width="200" height="100" style="border-radius: 50%;">
+                
+                <h1>CGPA Calculator</h1>
+            </div>
+            <p class="subtitle">Calculate your Cumulative Grade Point Average (CGPA) with precision. Input your courses, grades, and credits to get instant results.</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Course Input</span>
+                </div>
+                <div class="card-body">
+                    <div class="input-section">
+                        <div class="controls">
+                            <button id="addCourseBtn" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Add Course
+                            </button>
+                            <button id="resetBtn" class="btn btn-secondary">
+                                <i class="fas fa-redo"></i> Reset All
+                            </button>
+                            <button id="printBtn" class="btn btn-success">
+                                <i class="fas fa-print"></i> Print Results
+                            </button>
+                        </div>
+
+                        <table class="courses-table" id="coursesTable">
+                            <thead>
+                                <tr>
+                                    <th>Course Code</th>
+                                    <th>Course Title</th>
+                                    <th>Grade</th>
+                                    <th>Credits</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="coursesBody">
+                                <!-- Courses will be added here dynamically -->
+                                <tr id="emptyRow">
+                                    <td colspan="5" class="empty-state">
+                                        <i class="fas fa-clipboard-list"></i>
+                                        <h3>No courses added yet</h3>
+                                        <p>Click "Add Course" to begin entering your course details</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Your Summary</span>
+                </div>
+                <div class="card-body">
+                    <div class="result-section" id="resultSection">
+                        <div class="result-label">Your CGPA</div>
+                        <div class="result-value" id="cgpaResult">0.00</div>
+                        
+                        <div class="result-details">
+                            <div class="detail-item">
+                                <div class="detail-value" id="totalCredits">0</div>
+                                <div class="detail-label">Total Credits</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value" id="qualityPoints">0.0</div>
+                                <div class="detail-label">Quality Points</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js" ></script>
+</body>
+</html>
+
